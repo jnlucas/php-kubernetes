@@ -1,0 +1,22 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: aplicacao-deployment-sistema
+spec:
+  template:
+    metadata:
+      labels:
+        name: aplicacao-sistema-pod
+    spec:
+      containers:
+        - name: container-kubernetes-sistema
+          image: jnlucas/image-phpmysql:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+          - name: hostvol
+            mountPath: /var/www/html/
+      volumes:
+        - name: hostvol
+          hostPath:
+            path: /Users/joaoneves/docker/pedidos/kubernetes/sistema

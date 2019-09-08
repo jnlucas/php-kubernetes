@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sistema-pod-statefulset
+spec:
+  containers:
+    - name: container-sistema-statefulset
+      image: jnlucas/image-phpmysql:latest
+      ports:
+        - containerPort: 80

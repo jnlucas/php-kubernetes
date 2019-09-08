@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: aplicacao-pedido
+spec:
+  containers:
+    - name: container-kubernetes
+      image: jnlucas/image-php:latest
+      ports:
+        - containerPort: 80

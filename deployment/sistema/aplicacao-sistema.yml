@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: aplicacao-sistema
+spec:
+  containers:
+    - name: container-kubernetes-sistema
+      image: jnlucas/image-phpmysql:latest
+      ports:
+        - containerPort: 80

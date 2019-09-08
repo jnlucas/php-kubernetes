@@ -1,0 +1,32 @@
+apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+  name: aplicacao-sistema-statefulset
+spec:
+  serviceName: servico-sistema-statefulset
+  template:
+    metadata:
+      labels:
+        name: sistema-pod-statefulset
+    spec:
+      containers:
+        - name: container-sistema-statefulset
+          image: jnlucas/image-phpmysql:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+          - name: sessoes
+            mountPath: /tmp
+          - name: hostvol
+            mountPath: /var/www/html/
+          lifecycle:
+            postStart:
+              exec:
+                command: ["sh","notificacao.sh"]
+      volumes:
+        - name: sessoes
+          persistentVolumeClaim:
+            claimName: configuracao-permissao
+        - name: hostvol
+          hostPath:
+            path: /Users/joaoneves/docker/pedidos/kubernetes/sistema
