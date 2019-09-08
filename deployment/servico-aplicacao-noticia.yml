@@ -7,5 +7,6 @@ spec:
   ports:
     - protocol: TCP
       port: 80
+      nodePort: 31703
   selector:
     name: aplicacao-noticia-pod
