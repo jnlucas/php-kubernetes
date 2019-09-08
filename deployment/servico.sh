@@ -5,3 +5,5 @@ kubectl delete -f servico-noticia-noticia.yml
 
 kubectl create -f deployment-noticia.yml
 kubectl create -f servico-noticia-noticia.yml
+
+minikube service servico-aplicacao-noticia --url
