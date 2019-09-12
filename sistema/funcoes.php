@@ -2,7 +2,7 @@
 include "uploadClass.php";
 
 try{
-    $pdo = new PDO('mysql:host=192.168.99.1;dbname=empresa', 'root', 'q1w2e3r4');
+    $pdo = new PDO('mysql:host='.$_SERVER["REMOTE_ADDR"].';dbname=empresa', 'root', 'q1w2e3r4');
 
 }catch(PDOException $e){
     print_r($e);

@@ -1,6 +1,5 @@
 <?php
-const urlnoticias = 'http://192.168.99.100:31704/';
-$pdo = new PDO('mysql:host=192.168.99.1;dbname=empresa', 'root', 'q1w2e3r4');
+const urlnoticias = 'http://localhost:8587/';
 ?>
 <!DOCTYPE html>
 <html>
