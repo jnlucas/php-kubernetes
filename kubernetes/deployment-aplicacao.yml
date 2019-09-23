@@ -1,0 +1,22 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: aplicacao-deployment-noticias
+spec:
+  template:
+    metadata:
+      labels:
+        name: aplicacao-pedido-pod
+    spec:
+      containers:
+        - name: container-kubernetes
+          image: jnlucas/image-php:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+          - name: hostvol
+            mountPath: /var/www/html/
+      volumes:
+        - name: hostvol
+          hostPath:
+            path: /Users/joaoneves/docker/pedidos/kubernetes/noticias

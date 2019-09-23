@@ -1,8 +1,10 @@
 <?php
+include "bancodedados.php";
 include "uploadClass.php";
 
+
 try{
-    $pdo = new PDO('mysql:host='.$_SERVER["REMOTE_ADDR"].';dbname=empresa', 'root', 'q1w2e3r4');
+    $pdo = new PDO('mysql:host='.$host.';dbname='.$banco, $usuario, $senha);
 
 }catch(PDOException $e){
     print_r($e);

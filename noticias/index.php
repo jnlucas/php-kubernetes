@@ -1,6 +1,4 @@
-<?php
-const urlnoticias = 'http://localhost:8587/';
-?>
+<?php include "configuracao.php" ?>
 <!DOCTYPE html>
 <html>
 <head>
